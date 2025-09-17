@@ -4,7 +4,8 @@ import useSWRInfinite from 'swr/infinite'
 function Infinite() {
     const getKey = (index, previousPageData) => {
         if (previousPageData && previousPageData.articles.length === 0) return null
-        return `https://newsapi.org/v2/everything?q=apple&from=2025-09-16&to=2025-09-16&sortBy=popularity&page=${index + 1}&pageSize=8&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
+        return `https://newsapi.org/v2/top-headlines?country=us&page=${index + 1}&pageSize=10&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
+
     }
 
     const {data, error, size, setSize} = useSWRInfinite(getKey, fetcher, {

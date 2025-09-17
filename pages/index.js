@@ -5,7 +5,7 @@ import useSWR from 'swr'
 function HomePage() {
   const [page , setPage] = useState(1)
   const { data, error, isLoading } = useSWR(
-    `https://newsapi.org/v2/everything?q=apple&from=2025-09-16&to=2025-09-16&sortBy=popularity&page=${page}&pageSize=8&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`,
+    `https://newsapi.org/v2/top-headlines?country=us&page=${page}&pageSize=10&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`,
     fetcher,{
       revalidateOnFocus: false, 
       revalidateOnReconnect: false,
