@@ -54,7 +54,7 @@ function HomePage() {
               </div>
 
               <div className="mt-4 text-xs text-gray-500 border-t pt-2">
-                <p> {new Date(story.publishedAt).toLocaleDateString()}</p>
+                <p> {story.publishedAt}</p>
                 <p> {story.source?.name}</p>
               </div>
             </div>
