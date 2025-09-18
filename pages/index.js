@@ -8,8 +8,7 @@ function HomePage() {
     `/api/news?page=${page}&pageSize=10`,
     fetcher,{
       revalidateOnFocus: false, 
-      revalidateOnReconnect: false,
-      
+      revalidateOnReconnect: false,  
     }
   )
 
