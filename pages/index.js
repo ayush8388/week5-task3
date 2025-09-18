@@ -1,11 +1,11 @@
-import fetcher from '@/utils/fetcher'
+import fetcher from '@/pages/utils/fetcher'
 import React, { useState } from 'react'
 import useSWR from 'swr'
 
 function HomePage() {
   const [page , setPage] = useState(1)
   const { data, error, isLoading } = useSWR(
-    `https://newsapi.org/v2/top-headlines?country=us&page=${page}&pageSize=10&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`,
+    `/api/news?page=${page}&pageSize=10`,
     fetcher,{
       revalidateOnFocus: false, 
       revalidateOnReconnect: false,

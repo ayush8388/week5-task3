@@ -1,13 +1,11 @@
 import React from 'react'
-import fetcher from '@/utils/fetcher'
+import fetcher from '@/pages/utils/fetcher'
 import useSWRInfinite from 'swr/infinite'
 function Infinite() {
     const getKey = (index, previousPageData) => {
         if (previousPageData && previousPageData.articles.length === 0) return null
-        return `https://newsapi.org/v2/top-headlines?country=us&page=${index + 1}&pageSize=10&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
-
+        return `/api/news?page=${index + 1}&pageSize=10`
     }
-
     const {data, error, size, setSize} = useSWRInfinite(getKey, fetcher, {
         revalidateOnFocus: false,
         revalidateOnReconnect: false,
@@ -67,11 +65,7 @@ function Infinite() {
                 load more
             </button>
       </div>
-          
-
-
-    
-    </div>
+     </div>
   )
 }
 
