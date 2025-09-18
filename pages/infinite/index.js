@@ -1,5 +1,5 @@
 import React from 'react'
-import fetcher from '@/pages/utils/fetcher'
+import fetcher from '@/utils/fetcher'
 import useSWRInfinite from 'swr/infinite'
 function Infinite() {
     const getKey = (index, previousPageData) => {

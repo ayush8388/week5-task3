@@ -1,4 +1,4 @@
-import fetcher from '@/pages/utils/fetcher'
+import fetcher from '@/utils/fetcher'
 import React, { useState } from 'react'
 import useSWR from 'swr'
 
